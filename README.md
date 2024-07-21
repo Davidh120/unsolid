@@ -21,17 +21,35 @@
         4.Modificar la clase SalaryCalculator para que gestione exclusivamente los salarios sin depender 
         de EmployeeManager.
 
-    2. La clase ReportGenerator viola el principio de open/closed al no estar abierto a extension dado el caso que 
+    2. En la clase 'EmployeeManager y EmployeeOperations' se viola el principio open/close al no estar abiertas a extensión.
+        Cualquier nueva funcionalidad requiere modificar ambas clases.
+
+    Solución: Crear nuevas interfaces específicas para cada responsabilidad. Esto permite agregar nuevas funcionalidades sin modificar las interfaces o clases existentes.
+        1. Dividir la interfaz 'EmployeeOperations' en interfaces más pequeñas.
+        2. Implementar las nuevas interfaces en clases separadas que manejen cada responsabilidad por separado.
+
+    
+    3. La clase ReportGenerator viola el principio de open/closed al no estar abierto a extension dado el caso que 
     se quiere generar un nuevo tipo de informe.
 
     Solucion: Se modificara la clase ReportGenerator para ser un interfaz la cual tendra un metodo que generara los 
     reportes en base al tipo de reporte especificado, estos tipos de reportes se definiran en clases individuales.
 
-    3. Los metodos (calculateSalary, saveToFile) estan violando el principio de interface segregation ya que son metodos
+    4. Los metodos (calculateSalary, saveToFile) estan violando el principio de interface segregation ya que son metodos
     no relacionados con el empleado.
 
     Solucion: Se dividio en dos nuevas interfaces IFileManager  Interface segregation
 
-    4. En la clase PartTimeEmployee se viola el principio de Liskov al no implementar lo que herada del padre.
+    5. En la clase PartTimeEmployee se viola el principio de Liskov al no implementar lo que herada del padre.
 
     Solucion: Se remueve el metodo heredado y se deja la clase lista para futuras funcionalidades.
+
+    6. La clase 'SalaryCalculator' viola el principio de inversión de dependencias, al depender directamente de 'EmployeeManager', una implementación concreta. 
+    
+    Solución: Depender de una abstracción.
+        1. Crear una interfaz para el cálculo de salarios.
+        2. Modificar 'EmployeeManager' para implementar la nueva interfaz.
+        3. Inyectar como dependencia a SalaryCalculator a través de un método constructor o un método setter.
+
+
+    
