@@ -7,7 +7,7 @@
     - Katerine Vasquez
     - Santiago Ruiz
 
-## Principios Solid violados:
+## Principios Solid violados:Package solidresolve
 
     1. En la clase 'EmployeeManager y EmployeeOperations' se viola el principio de single responsibilty debido a que esta clase debe tener 
     como unica responsabilidad la gestion de empleados mas no la de calcular salarios o guardar archivos.
