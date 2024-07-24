@@ -44,7 +44,7 @@
 
     Solucion: Se remueve el metodo heredado y se deja la clase lista para futuras funcionalidades.
 
-    6. La clase 'SalaryCalculator' viola el principio de inversión de dependencias, al depender directamente de 'EmployeeManager', una implementación concreta. 
+    6. 6. La clase 'SalaryCalculator' viola el principio de inversión de dependencias, al depender directamente de 'EmployeeManager', una implementación concreta.  
     
     Solución: 
         1. Crear una interfaz para el cálculo de salarios.
