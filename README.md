@@ -46,10 +46,9 @@
 
     6. La clase 'SalaryCalculator' viola el principio de inversión de dependencias, al depender directamente de 'EmployeeManager', una implementación concreta. 
     
-    Solución: Depender de una abstracción.
+    Solución: 
         1. Crear una interfaz para el cálculo de salarios.
-        2. Modificar 'EmployeeManager' para implementar la nueva interfaz.
-        3. Inyectar como dependencia a SalaryCalculator a través de un método constructor o un método setter.
+        2.Inyectar al método calculateSalary el Empleado al que queremos realizar la operación
 
 
     
